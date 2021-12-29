@@ -50,6 +50,10 @@ class LRUCache:
 
 
     def get(self, key: int) -> int:
+        """
+            get node from cache
+            add node into head
+        """
         if key not in self.mapper:
             return -1
 
@@ -60,6 +64,10 @@ class LRUCache:
         return node.val
 
     def put(self, key: int, value: int) -> None:
+        """
+            put new node into head
+            drop tail node if size exceeds capacity
+        """
         is_existed = False 
 
         if key in self.mapper:
